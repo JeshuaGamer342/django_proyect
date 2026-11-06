@@ -9,7 +9,7 @@ class CategoryTestCase(TestCase):
 
         self.client = APIClient()
         self.user = get_user_model().objects.create_user(
-            username='tester_category', password='secret123'
+            email='category@test.com', username='tester_category', password='secret123'
         )
         self.client.force_authenticate(user=self.user)
         self.category = Category.objects.create(name='Electronica')
@@ -31,7 +31,7 @@ class ProductTestCase(TestCase):
 
         self.client = APIClient()
         self.user = get_user_model().objects.create_user(
-            username='tester_product', password='secret123'
+            email='product@test.com', username='tester_product', password='secret123'
         )
         self.client.force_authenticate(user=self.user)
         self.category = Category.objects.create(name='Electronica')
